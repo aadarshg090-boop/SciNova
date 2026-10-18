@@ -1,0 +1,357 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SciNova India — Innovate • Learn • Inspire</title>
+<meta name="description" content="SciNova India — A Student-Led Science, Innovation & STEM Community.">
+<meta name="theme-color" content="#090a0f">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap');
+:root{--bg:#08090d;--surface:#11131a;--paper:#f4f2ea;--white:#fff;--acid:#d7ff00;--cyan:#00e5ff;--pink:#ff3da7;--violet:#7957ff;--orange:#ff8a00;--muted:#9da0aa;--line:#252831;--max:1440px}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:#fff;font-family:Manrope,sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:99;opacity:.035;background-image:radial-gradient(#fff 1px,transparent 1px);background-size:4px 4px}
+a{color:inherit}.mono{font-family:"DM Mono",monospace}.display{font-family:"Space Grotesk",sans-serif;font-weight:700;letter-spacing:-.07em}
+nav{position:fixed;z-index:60;top:14px;left:2%;right:2%;display:flex;align-items:center;justify-content:space-between;padding:10px 13px;border:1px solid #ffffff25;border-radius:18px;background:#10121ad9;backdrop-filter:blur(22px);box-shadow:0 15px 50px #0008}
+.logo{font:800 1.25rem "Space Grotesk";letter-spacing:-.05em;text-decoration:none}.logo span{color:var(--cyan)}.logo small{font:500 .6rem "DM Mono";color:#aaa;margin-left:4px}
+.links{display:flex;gap:18px}.links a{font:700 .7rem Manrope;text-decoration:none;color:#d6d7dc}.links a:hover{color:var(--acid)}
+.navbtn,.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;border-radius:11px;text-decoration:none;font-weight:800;cursor:pointer;border:1px solid var(--ink,#08090d);transition:.2s}.navbtn{background:var(--acid);color:#08090d;font-size:.7rem}.btn{background:var(--acid);color:#08090d;box-shadow:5px 5px 0 var(--pink)}.btn:hover{transform:translate(3px,3px);box-shadow:2px 2px 0 var(--pink)}.btn.secondary{background:transparent;color:#fff;border-color:#fff5;box-shadow:5px 5px 0 var(--cyan)}
+.hero{min-height:100svh;display:flex;align-items:center;padding:140px 5vw 70px;position:relative;overflow:hidden;background:radial-gradient(circle at 72% 45%,#262b62 0,transparent 27%),radial-gradient(circle at 12% 80%,#45143b 0,transparent 25%),var(--bg)}
+.heroGrid{width:100%;max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.05fr .95fr;gap:50px;align-items:center}.eyebrow{display:inline-flex;gap:9px;align-items:center;padding:8px 12px;border:1px solid #ffffff30;border-radius:99px;color:var(--acid);font:500 .68rem "DM Mono";letter-spacing:.1em}.dot{width:7px;height:7px;background:var(--acid);border-radius:50%;box-shadow:0 0 16px var(--acid)}
+h1{font-size:clamp(4.5rem,10.7vw,10.8rem);line-height:.75;margin:24px 0;text-transform:uppercase}.hero h1 .pink{color:var(--pink)}.hero h1 .cyan{color:var(--cyan)}.hero .tagline{font:500 .8rem "DM Mono";color:#fff;letter-spacing:.12em}.hero p{font-size:clamp(1rem,1.5vw,1.2rem);line-height:1.7;color:#c7c8d0;max-width:710px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+.heroArt{height:620px;position:relative;perspective:1100px;transition:transform .15s ease-out}.planet{position:absolute;width:290px;height:290px;left:50%;top:50%;transform:translate(-50%,-50%);border-radius:50%;background:radial-gradient(circle at 30% 22%,#fff 0 2%,var(--cyan) 3% 13%,#4b52ff 32%,#170d39 70%);box-shadow:inset -50px -35px 70px #000,0 0 95px #00e5ff55;animation:planet 12s linear infinite}.planet:before,.planet:after{content:"";position:absolute;border-radius:50%;inset:-55px;border:7px solid var(--pink);transform:rotateX(68deg) rotateZ(12deg)}.planet:after{inset:-92px;border-color:var(--acid);transform:rotateY(68deg) rotateZ(-22deg);opacity:.65}
+.orbitDot{position:absolute;width:14px;height:14px;background:var(--acid);border-radius:50%;left:18%;top:23%;box-shadow:0 0 25px var(--acid);animation:orbit 8s linear infinite}.orbitDot:nth-child(2){background:var(--pink);animation-duration:11s;animation-delay:-3s}.orbitDot:nth-child(3){background:var(--cyan);animation-duration:14s;animation-delay:-7s}
+@keyframes planet{to{transform:translate(-50%,-50%) rotateX(360deg) rotateY(360deg)}}@keyframes orbit{50%{transform:translate(270px,130px)}}
+.float{position:absolute;padding:15px 18px;border:1px solid #ffffff35;border-radius:15px;background:#11131be6;backdrop-filter:blur(14px);box-shadow:8px 8px 0 var(--violet);animation:float 4.5s ease-in-out infinite}.float b{display:block;font:800 2.2rem "Space Grotesk";color:var(--acid)}.float small{color:#aaa}.f1{left:0;top:7%;transform:rotate(-6deg)}.f2{right:0;bottom:14%;transform:rotate(7deg);animation-delay:-1.5s}.f3{left:10%;bottom:3%;transform:rotate(3deg);animation-delay:-3s}@keyframes float{50%{translate:0 -16px}}
+.ticker{overflow:hidden;border-block:1px solid #000;background:var(--acid);color:#09090d}.tickerTrack{display:flex;width:max-content;gap:36px;padding:12px 0;font:800 1.25rem "Space Grotesk";animation:marquee 23s linear infinite}.tickerTrack span:nth-child(3n){color:var(--pink)}@keyframes marquee{to{transform:translateX(-50%)}}
+section{padding:110px 5vw}.wrap{max-width:var(--max);margin:auto}.dark{background:var(--bg);color:#fff}.paper{background:var(--paper);color:#09090d}.kicker{font:500 .67rem "DM Mono";letter-spacing:.14em;text-transform:uppercase;color:#72747d}.dark .kicker{color:var(--cyan)}.sectionHead{font-size:clamp(3.2rem,7vw,7.5rem);line-height:.82;margin:12px 0 55px;text-transform:uppercase}.sectionHead em{font-style:normal;color:var(--pink)}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid #ffffff22}.stat{padding:25px;border-right:1px solid #ffffff22;min-height:155px}.stat:last-child{border-right:0}.stat b{font:800 clamp(2.4rem,4vw,4.5rem) "Space Grotesk";display:block;color:var(--acid);letter-spacing:-.07em}.stat small{font:500 .68rem "DM Mono";text-transform:uppercase;color:#aaa}
+.purpose{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:18px}.manifesto{padding:34px;border:1px solid #ffffff1d;background:#11131a;min-height:360px;position:relative;overflow:hidden}.manifesto:after{content:"VISION";position:absolute;right:-15px;bottom:-45px;font:800 8rem "Space Grotesk";color:#fff03}.manifesto:nth-child(2):after{content:"MISSION"}.manifesto h3{font:500 .7rem "DM Mono";color:var(--cyan);text-transform:uppercase}.manifesto p:first-of-type{font:700 clamp(1.6rem,3vw,3rem);line-height:1.02;letter-spacing:-.05em;max-width:850px}.manifesto p:last-of-type{color:#aaa;line-height:1.7;max-width:800px}
+.story{display:grid;grid-template-columns:.7fr 1.3fr;gap:60px}.storyText{font-size:1.12rem;line-height:1.85;color:#c5c6cc}.pills{display:flex;flex-wrap:wrap;gap:8px;margin-top:25px}.pill{padding:8px 11px;border:1px solid #ffffff35;border-radius:99px;font:500 .68rem "DM Mono"}
+.leadHero{display:grid;grid-template-columns:1fr 1.7fr;gap:20px;padding:25px;border:1px solid #000;background:var(--acid);color:#09090d;box-shadow:10px 10px 0 var(--pink);margin-bottom:18px}.leadHero h3{font-size:clamp(2rem,4vw,4rem);margin:10px 0}.leadHero p{line-height:1.7;max-width:850px}.people{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.person{min-height:220px;border:1px solid #000;background:#fff;padding:20px;position:relative;transition:.25s}.person:hover{transform:translateY(-6px);box-shadow:8px 8px 0 var(--violet)}.role{font:500 .62rem "DM Mono";color:#6d6e76;text-transform:uppercase}.person h3{font-size:1.15rem;margin:40px 0 7px;letter-spacing:-.03em}.person p{font-size:.78rem;color:#666}.badge{position:absolute;top:13px;right:13px;padding:5px 7px;border:1px solid #000;font:500 .57rem "DM Mono"}
+.programs{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.program{min-height:315px;padding:25px;border:1px solid #ffffff22;background:#11131a;position:relative;overflow:hidden}.program:nth-child(2){background:#18132b}.program:nth-child(3){background:#21111e}.program:nth-child(4){background:#102126}.program:nth-child(5){background:#1d2111}.program:nth-child(6){background:#181818}.program .num{position:absolute;right:10px;bottom:-18px;font:800 7rem "Space Grotesk";color:#fff06}.program h3{font-size:1.45rem}.program p,.program li{color:#aaa;line-height:1.6;font-size:.82rem}.program ul{padding-left:17px}
+.invent{background:#0c0d11;position:relative;overflow:hidden}.invent:before{content:"I.N.V.E.N.T.";position:absolute;right:-5vw;top:20%;font:800 17vw "Space Grotesk";color:#fff03;transform:rotate(-8deg)}.invent .wrap{position:relative;z-index:1}.inventIntro{max-width:900px;color:#bbb;line-height:1.75;font-size:1.12rem}.method{display:grid;grid-template-columns:repeat(6,1fr);gap:8px;margin-top:42px}.stage{padding:18px;border:1px solid #ffffff22;background:#ffffff05;min-height:160px}.stage b{font:500 .65rem "DM Mono";color:var(--acid)}.stage h4{margin:28px 0 8px;font-size:1.1rem}.stage p{font-size:.72rem;color:#aaa}.focusGrid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:18px}.focus{padding:25px;border:1px solid #ffffff18;background:#11131a}.focus h3{font-size:1.25rem}.focus p,.focus li{color:#aaa;font-size:.8rem;line-height:1.75}
+.achievements{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.achievement{border:1px solid #000;background:#fff;padding:22px;min-height:190px;color:#09090d}.achievement strong{display:inline-block;padding:5px 7px;background:var(--pink);font:700 .57rem "DM Mono"}.achievement h3{margin:20px 0 7px;font-size:1.15rem}.achievement p{font-size:.8rem;color:#666}
+.timeline{display:grid;grid-template-columns:repeat(6,1fr);gap:10px}.milestone{border-top:4px solid #000;padding-top:15px}.milestone b{font:800 2.7rem "Space Grotesk"}.milestone h4{text-transform:uppercase;font-size:.85rem}.milestone p{font-size:.76rem;color:#666;line-height:1.55}
+.partners{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.partner{padding:25px;border:1px solid #000;background:#fff;min-height:270px;color:#09090d}.partner h3{font-size:1.35rem;margin-top:38px}.partner p{font-size:.8rem;color:#666;line-height:1.65}.partner a{font:500 .65rem "DM Mono";text-decoration:none}.partner a:hover{color:var(--violet)}
+.dispatches{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:12px}.article{border:1px solid #ffffff22;padding:24px;background:#11131a;min-height:235px}.article.featured{grid-row:span 2;background:linear-gradient(145deg,#17152b,#101116);border-color:#ffffff35}.article .cat{font:500 .63rem "DM Mono";color:var(--cyan)}.article h3{font-size:1.35rem;line-height:1.15}.article.featured h3{font-size:2.25rem}.article p{font-size:.82rem;line-height:1.65;color:#aaa}.article .meta{font:500 .62rem "DM Mono";color:#777}
+.engage{background:var(--paper);color:#09090d}.roles{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.roleCard{border:1px solid #000;padding:24px;min-height:235px;background:#fff}.roleCard:nth-child(2){background:var(--acid)}.roleCard:nth-child(3){background:#e5e0ff}.roleCard:nth-child(4){background:#ffe2f1}.roleCard h3{font-size:1.25rem}.roleCard p{font-size:.8rem;line-height:1.65;color:#555}.roleCard b{font:500 .62rem "DM Mono"}
+.ambassador{background:linear-gradient(120deg,#d7ff00,#baffee);color:#09090d;border:2px solid #09090d;padding:45px;box-shadow:12px 12px 0 var(--pink)}.ambassadorGrid{display:grid;grid-template-columns:1fr 1fr;gap:40px}.ambassador h3{font-size:2rem}.ambassador li{line-height:1.8;font-size:.88rem}
+.cta{background:var(--violet);color:#fff;border:2px solid #09090d;padding:65px;text-align:center;box-shadow:12px 12px 0 var(--acid)}.cta h2{font-size:clamp(3.5rem,8vw,8rem);line-height:.78;margin:0 0 25px}.cta p{max-width:750px;margin:0 auto 28px;line-height:1.7}.contactGrid{display:grid;grid-template-columns:1fr 1fr;gap:15px}.contactCard{border:1px solid #000;background:#fff;padding:28px;color:#09090d}.contactCard h3{font-size:1.5rem}.contactCard p{line-height:1.7;color:#555}.input{width:100%;padding:14px;border:1px solid #000;background:#fff;font:inherit;margin:6px 0 10px}.textarea{min-height:130px;resize:vertical}
+footer{padding:40px 5vw;background:#06070a;color:#8e919b;border-top:1px solid #ffffff18}.footerGrid{max-width:var(--max);margin:auto;display:grid;grid-template-columns:1.5fr 1fr 1fr 1fr;gap:30px}.footerGrid h4{color:#fff}.footerGrid a{display:block;text-decoration:none;font-size:.75rem;margin:10px 0}.fine{max-width:var(--max);margin:35px auto 0;padding-top:20px;border-top:1px solid #ffffff14;font:500 .62rem "DM Mono";display:flex;justify-content:space-between;gap:20px}
+.reveal{opacity:0;transform:translateY(25px);transition:opacity .7s ease,transform .7s ease}.reveal.show{opacity:1;transform:none}
+@media(max-width:1000px){.heroGrid,.story,.leadHero,.ambassadorGrid,.contactGrid{grid-template-columns:1fr}.heroArt{height:470px}.stats{grid-template-columns:1fr 1fr}.stat:nth-child(2){border-right:0}.people{grid-template-columns:repeat(2,1fr)}.programs,.achievements,.partners,.roles{grid-template-columns:1fr 1fr}.method{grid-template-columns:repeat(3,1fr)}.timeline{grid-template-columns:repeat(3,1fr)}.dispatches{grid-template-columns:1fr}.article.featured{grid-row:auto}}
+@media(max-width:620px){nav{top:8px}.links,.navbtn{display:none}.hero{padding-top:115px}.heroArt{height:390px}.planet{width:210px;height:210px}.float{font-size:.75rem}.float b{font-size:1.65rem}.stats,.people,.programs,.achievements,.partners,.roles,.method,.timeline,.purpose,.focusGrid{grid-template-columns:1fr}.stat{border-right:0;border-bottom:1px solid #ffffff22}.stat:last-child{border-bottom:0}.sectionHead{margin-bottom:38px}.cta{padding:45px 22px}.ambassador{padding:30px 20px}.footerGrid{grid-template-columns:1fr 1fr}.fine{flex-direction:column}}
+
+.navActions{display:flex;align-items:center;gap:8px}.menuBtn{display:none;border:1px solid #ffffff35;background:#ffffff08;color:#fff;border-radius:11px;padding:11px 13px;font:700 .68rem "DM Mono";cursor:pointer}.menuBtn span{color:var(--acid);margin-left:4px}
+.mobileMenu{display:none;position:fixed;z-index:59;inset:0;background:#08090ff2;backdrop-filter:blur(24px);padding:100px 5vw 30px}.mobileMenu.open{display:block}.mobileMenuInner{max-width:760px;margin:auto;display:flex;flex-direction:column;gap:9px}.mobileMenuInner>a{font:800 clamp(2rem,8vw,5rem) "Space Grotesk";text-decoration:none;letter-spacing:-.06em}.mobileMenuInner>a:hover{color:var(--acid)}.menuLabel{font-size:.65rem;color:var(--cyan);margin-bottom:15px}.menuSocials{display:flex;gap:18px;margin-top:22px;padding-top:18px;border-top:1px solid #ffffff18}.menuSocials a{font:600 .75rem "DM Mono";text-decoration:none;color:#bbb}
+.articleComposer{margin-top:25px;padding:28px;border:1px solid #ffffff22;background:#11131a}.articleComposer h3{margin-top:0;font-size:1.5rem}.articleComposer .grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px}.articleComposer .input{background:#0b0d12;color:#fff;border-color:#ffffff25}.articleComposer .input::placeholder{color:#777}.articleList{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:18px}.statusMsg{font:500 .68rem "DM Mono";color:var(--acid);margin-top:10px}
+.aiDock{position:fixed;z-index:80;right:18px;bottom:18px}.aiToggle{width:58px;height:58px;border-radius:50%;border:2px solid #09090d;background:var(--acid);box-shadow:7px 7px 0 var(--pink);font:800 .7rem "DM Mono";cursor:pointer}.aiPanel{display:none;position:absolute;right:0;bottom:72px;width:min(370px,calc(100vw - 28px));border:1px solid #ffffff30;border-radius:18px;background:#0e1017ed;backdrop-filter:blur(22px);box-shadow:0 25px 70px #0009;overflow:hidden}.aiPanel.open{display:block}.aiHead{padding:15px 17px;border-bottom:1px solid #ffffff18;display:flex;justify-content:space-between;align-items:center}.aiHead b{font:800 .9rem "Space Grotesk"}.aiHead small{color:var(--cyan);font:500 .58rem "DM Mono"}.aiBody{padding:13px;height:330px;overflow:auto}.aiMsg{max-width:88%;padding:10px 12px;border-radius:12px;margin:7px 0;font-size:.78rem;line-height:1.55}.aiMsg.bot{background:#171a23;color:#ddd}.aiMsg.user{background:var(--acid);color:#09090d;margin-left:auto}.aiForm{display:flex;gap:7px;padding:10px;border-top:1px solid #ffffff18}.aiForm input{flex:1;min-width:0;padding:11px;border-radius:10px;border:1px solid #ffffff22;background:#08090d;color:#fff}.aiForm button{border:0;border-radius:10px;background:var(--cyan);font-weight:800;padding:0 13px;cursor:pointer}
+.backendBadge{display:inline-flex;gap:7px;align-items:center;font:500 .6rem "DM Mono";color:#888;margin-top:15px}.backendBadge i{width:7px;height:7px;border-radius:50%;background:var(--acid);box-shadow:0 0 12px var(--acid)}
+@media(max-width:620px){.links,.navbtn{display:none}.menuBtn{display:block}.mobileMenu{padding-top:90px}.articleComposer .grid2,.articleList{grid-template-columns:1fr}.aiDock{right:12px;bottom:12px}}
+</style>
+</head>
+<body>
+<nav>
+<a class="logo" href="#top">SCINOV<span>A</span><small> INDIA</small></a>
+<div class="links" id="desktopLinks"><a href="#about">About</a><a href="#programs">Programs</a><a href="#leadership">Leadership</a><a href="#invent">I.N.V.E.N.T.</a><a href="#dispatches">News</a><a href="#contact">Contact</a></div>
+<div class="navActions">
+<a class="navbtn" href="#join">JOIN SCINOVA ↗</a>
+<button class="menuBtn" id="menuBtn" aria-label="Open menu" aria-expanded="false">MENU <span>☰</span></button>
+</div>
+</nav>
+<div class="mobileMenu" id="mobileMenu">
+<div class="mobileMenuInner">
+<div class="mono menuLabel">NAVIGATION / 2026</div>
+<a href="#about">About</a><a href="#programs">Programs</a><a href="#leadership">Leadership</a><a href="#invent">I.N.V.E.N.T.</a><a href="#dispatches">News & Articles</a>
+<a href="#ambassador">Campus Ambassador</a><a href="#join">Join Community</a><a href="#contact">Contact</a>
+<div class="menuSocials">
+<a href="https://www.instagram.com/scinova_india?exln=MTMxemRuY3M4dzExMw==" target="_blank" rel="noopener">Instagram ↗</a>
+<a href="https://www.linkedin.com/company/scinovaindia/" target="_blank" rel="noopener">LinkedIn ↗</a>
+</div>
+</div>
+</div>
+
+<main id="top">
+<section class="hero">
+<div class="heroGrid">
+<div class="reveal">
+<span class="eyebrow"><i class="dot"></i>NATIONAL STUDENT STEM INITIATIVE</span>
+<h1 class="display">SCI<span class="pink">NOVA</span><br><span class="cyan">INDIA</span></h1>
+<div class="tagline">INNOVATE • LEARN • INSPIRE</div>
+<p>Building the Next Generation of Scientific Minds.<br>A Student-Led Science, Innovation & STEM Community connecting students with knowledge, mentors, experts and opportunities to learn, experiment, innovate and lead.</p>
+<div class="actions"><a class="btn" href="#about">EXPLORE SCINOVA →</a><a class="btn secondary" href="#join">JOIN OUR COMMUNITY</a></div>
+</div>
+<div class="heroArt" id="heroArt">
+<div class="planet"></div><div class="orbitDot"></div><div class="orbitDot"></div><div class="orbitDot"></div>
+<div class="float f1"><small class="mono">COMMUNITY NETWORK</small><b>250+</b>Active Student Innovators</div>
+<div class="float f2"><small class="mono">REACH & IMPACT</small><b>National</b>Competitions & Outreach</div>
+<div class="float f3"><small class="mono">GOVERNANCE</small><b>100%</b>Student-Led Initiative</div>
+</div>
+</div>
+</section>
+
+<div class="ticker"><div class="tickerTrack"><span>SCIENCE</span><span>INNOVATION</span><span>STEM EDUCATION</span><span>STUDENT LEADERSHIP</span><span>SCIENCE</span><span>INNOVATION</span><span>STEM EDUCATION</span><span>STUDENT LEADERSHIP</span></div></div>
+
+<section id="about" class="dark"><div class="wrap">
+<div class="kicker">01 / Institutional Purpose</div><h2 class="sectionHead display">OUR <em>WHY.</em></h2>
+<div class="stats reveal">
+<div class="stat"><b>250+</b><small>Active Student Innovators</small></div><div class="stat"><b>3–4 Yrs</b><small>Practical STEM Work</small></div><div class="stat"><b>National</b><small>Competitions & Outreach</small></div><div class="stat"><b>100%</b><small>Student-Led Initiative</small></div>
+</div>
+<div class="purpose reveal">
+<div class="manifesto"><h3>Our Vision</h3><p>“From a student initiative to a national STEM community.”</p><p>SciNova India works to make Science, Innovation and STEM opportunities more accessible to students by connecting them with learning, mentorship, expert guidance, competitions and real-world innovation experiences.</p></div>
+<div class="manifesto"><h3>Core Purpose · Our Mission</h3><p>“To make quality Science, Innovation and STEM opportunities more accessible to students.”</p><p>Through learning, mentorship, project guidance, competitions, expert connections and community building.</p></div>
+</div>
+</div></section>
+
+<section class="dark"><div class="wrap story reveal">
+<div><div class="kicker">02 / National Horizon</div><h2 class="sectionHead display">FROM<br>CURIO<span style="color:var(--pink)">SITY</span><br>TO COMMUNITY</h2></div>
+<div class="storyText">SciNova began as a student initiative focused on helping students explore science, develop innovative projects, improve presentations and prepare for science fairs and competitions.<br><br>Over 3–4 years, the initiative expanded through competitions, workshops, project guidance, expert sessions and student outreach.<br><br>Today, SciNova India is building a broader student-led Science, Innovation & STEM community connecting young minds with people, knowledge, and opportunities that can help them grow.
+<div class="pills"><span class="pill">Student-Governed</span><span class="pill">Hands-on Inquiry</span><span class="pill">Pan-India Outreach</span></div></div>
+</div></section>
+
+<section id="leadership" class="paper"><div class="wrap">
+<div class="kicker">03 / Organization Leadership</div><h2 class="sectionHead display">THE PEOPLE<br>BEHIND <em>SCINOVA.</em></h2>
+<div class="leadHero reveal"><div><div class="kicker">Founder & Chairman</div><h3 class="display">Anangpal Jee</h3><b>Founder & Chairman (Temporary CEO)</b></div><div><p>Anangpal Jee is a student innovator and youth leader with an interest in Science, Innovation, STEM and community building. He founded SciNova with the vision of creating a platform where students can learn, experiment, innovate and connect with meaningful opportunities.</p><p>Under his stewardship, SciNova has expanded from a student research interest into a pan-India youth movement, uniting hundreds of students, school chapters, and academic mentors around hands-on science and technology.</p><div class="pills"><span class="pill">Student Innovator & Maker</span><span class="pill">Olympiad & Science Fair Winner</span><span class="pill">Youth Community Builder</span></div></div></div>
+<div class="people reveal">
+<div class="person"><span class="badge">FOUNDING</span><div class="role">Co-Founder & National Treasurer</div><h3>Purvee</h3><p>Finance & Treasury</p></div>
+<div class="person"><span class="badge">FOUNDING</span><div class="role">Co-Founder & General Secretary</div><h3>Naitik Kumar Jha</h3><p>General Administration</p></div>
+<div class="person"><span class="badge">FOUNDING</span><div class="role">Co-Founder & National Executive Secretary</div><h3>Ujjwal Raj</h3><p>Executive Affairs</p></div>
+<div class="person"><span class="badge">FOUNDING</span><div class="role">Co-Founder & National Organising Secretary</div><h3>Rajvardhan</h3><p>Events & Organisation</p></div>
+<div class="person"><span class="badge">FOUNDING</span><div class="role">Co-Founder & National Membership Secretary</div><h3>Arpit Chaudhary</h3><p>Community & Membership</p></div>
+<div class="person"><span class="badge">SECRETARIAT</span><div class="role">National Coordinator</div><h3>Vivek Priyadarshi</h3><p>National Operations</p></div>
+<div class="person"><span class="badge">SECRETARIAT</span><div class="role">Joint Secretary</div><h3>Shivhari Lande</h3><p>Secretariat</p></div>
+<div class="person"><span class="badge">SECRETARIAT</span><div class="role">National Programme Secretary</div><h3>Ayush Tiwari</h3><p>Programmes & Workshops</p></div>
+<div class="person"><span class="badge">SECRETARIAT</span><div class="role">National Public Relations Secretary</div><h3>Aditya Raj</h3><p>Public Relations & Media</p></div>
+<div class="person"><span class="badge">SECRETARIAT</span><div class="role">National Outreach Secretary</div><h3>Abhinav Raj</h3><p>Outreach & Partnerships</p></div>
+<div class="person"><span class="badge">SECRETARIAT</span><div class="role">National Student Secretary</div><h3>Adarshpal Jee</h3><p>Student Affairs</p></div>
+<div class="person"><span class="badge">SECRETARIAT</span><div class="role">National Science & Innovation Secretary</div><h3>Samyak Raj</h3><p>Science & Innovation</p></div>
+<div class="person"><span class="badge">SECRETARIAT</span><div class="role">National IT & Digital Secretary</div><h3>Adarsh Raj Gupta</h3><p>IT & Digital Infrastructure</p></div>
+<div class="person"><span class="badge">ADVISORY</span><div class="role">Strategic Advisor</div><h3>Tanmay Marathe</h3><p>Strategic Advisory Board</p></div>
+<div class="person"><span class="badge">ADVISORY</span><div class="role">Chief Advisor</div><h3>Srimathy Keshan</h3><p>Advisory Board</p></div>
+<div class="person"><span class="badge">ADVISORY</span><div class="role">Chief Advisor</div><h3>Rahul Kumar</h3><p>Advisory Board</p></div>
+</div>
+</div></section>
+
+<section id="programs" class="dark"><div class="wrap">
+<div class="kicker">04 / Educational Initiatives</div><h2 class="sectionHead display">CORE<br><em>PROGRAMS.</em></h2>
+<div class="programs reveal">
+<article class="program"><div class="num">01</div><span class="kicker">STEM EDUCATION</span><h3>Learn by Doing</h3><p>Workshops, learning sessions and practical STEM experiences.</p><ul><li>Practical lab experiments</li><li>Interactive physics & engineering sessions</li><li>Electronics & sensor fundamentals</li></ul></article>
+<article class="program"><div class="num">02</div><span class="kicker">COMPETITIONS</span><h3>Science & Innovation</h3><p>Challenges that encourage scientific thinking and creativity.</p><ul><li>National science fair preparation</li><li>Olympiad & challenge guidance</li><li>Scientific poster & model contests</li></ul></article>
+<article class="program"><div class="num">03</div><span class="kicker">INNOVATION</span><h3>Project Development</h3><p>Helping students turn ideas into meaningful projects.</p><ul><li>Idea-to-prototype roadmaps</li><li>Hardware & software integration</li><li>Design thinking & patent awareness</li></ul></article>
+<article class="program"><div class="num">04</div><span class="kicker">MENTORSHIP</span><h3>Expert Sessions</h3><p>Connecting students with mentors, educators and experts.</p><ul><li>Guest talks with domain researchers</li><li>One-on-one project evaluation</li><li>Career & academic roadmap advice</li></ul></article>
+<article class="program"><div class="num">05</div><span class="kicker">OUTREACH</span><h3>STEM for Everyone</h3><p>Taking science and innovation opportunities to more students.</p><ul><li>Grassroots community visits</li><li>Democratizing STEM in non-metro areas</li><li>Open-source scientific kits</li></ul></article>
+<article class="program"><div class="num">06</div><span class="kicker">LEADERSHIP</span><h3>Students Lead</h3><p>Creating opportunities for students to lead, coordinate and build communities.</p><ul><li>Campus Ambassador governance</li><li>Regional chapter coordination</li><li>Public speaking & community management</li></ul></article>
+</div>
+</div></section>
+
+<section id="invent" class="invent"><div class="wrap">
+<div class="kicker">INITIATIVE.NODE: I.N.V.E.N.T. // COLLABORATIVE_CELL</div><h2 class="sectionHead display">IDEAS MEET<br><em>OPPORTUNITY.</em></h2>
+<p class="inventIntro">Introducing <strong>SciNova I.N.V.E.N.T. Club</strong> — a collaborative initiative with MyCrave Consultancy & Services through Mission I.N.V.E.N.T. It connects student innovation with awareness of Intellectual Property Rights (IPR), idea development and responsible innovation.</p>
+<div class="method reveal">
+<div class="stage"><b>01</b><h4>Idea</h4><p>Problem Identification</p></div><div class="stage"><b>02</b><h4>Develop</h4><p>Concept Structuring</p></div><div class="stage"><b>03</b><h4>Innovate</h4><p>Tangible Prototyping</p></div><div class="stage"><b>04</b><h4>Understand IP</h4><p>IPR Fundamentals</p></div><div class="stage"><b>05</b><h4>Protect</h4><p>Safeguarding Innovation</p></div><div class="stage"><b>06</b><h4>Create Impact</h4><p>Responsible Value</p></div>
+</div>
+<div class="focusGrid reveal">
+<div class="focus"><h3>IPR Awareness</h3><p>Fundamentals of Intellectual Property</p><ul><li>Patents — inventions</li><li>Copyrights — creative & code</li><li>Trademarks — brands & identity</li><li>Designs — industrial aesthetics</li></ul></div>
+<div class="focus"><h3>Idea Development</h3><p>From Raw Thought to Structured Concept</p><ul><li>Problem statement definition</li><li>Feasibility assessment</li><li>Iterative hypothesis testing</li><li>Design thinking frameworks</li></ul></div>
+<div class="focus"><h3>Innovation to Reality</h3><p>Hands-On Prototyping & Outcomes</p><ul><li>Hardware & software prototyping</li><li>Laboratory experimentation</li><li>Iterative engineering cycles</li><li>Proof-of-concept validation</li></ul></div>
+<div class="focus"><h3>IP Protection Awareness</h3><p>Safeguarding Original Inventions</p><ul><li>Inventive step recognition</li><li>Research notebook documentation</li><li>Prior art consciousness</li><li>Ethical innovation conduct</li></ul></div>
+<div class="focus"><h3>Innovation & Entrepreneurship</h3><p>Pathway to Value Creation</p><ul><li>Value proposition mapping</li><li>Translational science pathways</li><li>Venture readiness mindset</li><li>Student founder literacy</li></ul></div>
+<div class="focus"><h3>Community Outreach</h3><p>Grassroots & Institutional Access</p><ul><li>School science clubs</li><li>College innovation cells</li><li>Regional awareness seminars</li><li>Inclusive STEM access</li></ul></div>
+</div>
+<p class="mono" style="color:#777;font-size:.66rem;margin-top:30px">NOTICE: SciNova I.N.V.E.N.T. Club is an educational and awareness initiative. Activities adhere to non-commercial student mentorship and intellectual integrity.</p>
+</div></section>
+
+<section class="paper"><div class="wrap">
+<div class="kicker">05 / Verified Track Record</div><h2 class="sectionHead display">PROOF OF<br><em>PASSION.</em></h2>
+<div class="achievements reveal">
+<div class="achievement"><strong>INTERNATIONAL</strong><h3>SOF IMO International Rank 3</h3><p>Global Mathematics Olympiad Rank 3</p></div>
+<div class="achievement"><strong>NATIONAL · 2024 & 2025</strong><h3>Young Scientist of India Awardee 2024 & 2025</h3><p>Consecutive Years National Honors</p></div>
+<div class="achievement"><strong>NATIONAL · 2025</strong><h3>Young Scientist India Finalist Award</h3><p>Edition 11 / 2025 National Finalist</p></div>
+<div class="achievement"><strong>NATIONAL</strong><h3>Aavishkar Makethalon National Awardee</h3><p>National Making & Rapid Innovation Award</p></div>
+<div class="achievement"><strong>STATE · 2024</strong><h3>Eastern India Science Fair Winner</h3><p>Eastern Regional Champion</p></div>
+<div class="achievement"><strong>STATE · 2023</strong><h3>VVM Olympiad Bihar Topper</h3><p>Vidyarthi Vigyan Manthan State Rank 1</p></div>
+<div class="achievement"><strong>STATE</strong><h3>2× NCSC State Participant</h3><p>National Children Science Congress State Finalist</p></div>
+<div class="achievement"><strong>STATE</strong><h3>2× BCSRP State Participant</h3><p>Bihar Child Science Research Programme State Finalist</p></div>
+<div class="achievement"><strong>STATE</strong><h3>TSTM Olympiad State Rank 7</h3><p>Talent Search Test in Mathematics Top 10 State Rank</p></div>
+<div class="achievement"><strong>EXCELLENCE</strong><h3>Indian Star Passion Award Awardee</h3><p>National Youth Passion in STEM Excellence</p></div>
+<div class="achievement"><strong>EXCELLENCE</strong><h3>Rising Star of India</h3><p>Youth Science Leadership Recognition by ISHIKA Foundation</p></div>
+</div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="kicker">06 / Institutional Evolution</div><h2 class="sectionHead display">THE <em>JOURNEY.</em></h2>
+<div class="timeline reveal">
+<div class="milestone"><b>01</b><h4>The Beginning</h4><p>A student initiative focused on science, innovation and project development.</p></div>
+<div class="milestone"><b>02</b><h4>Building Through Innovation</h4><p>Science projects, competitions, science fairs, presentations and innovation activities.</p></div>
+<div class="milestone"><b>03</b><h4>Growing the Community</h4><p>Workshops, expert sessions, mentorship and student outreach expanded the initiative.</p></div>
+<div class="milestone"><b>04</b><h4>250+ Members</h4><p>SciNova grew into a community of 250+ students and young STEM enthusiasts.</p></div>
+<div class="milestone"><b>05</b><h4>SciNova India</h4><p>The initiative evolved into a broader student-led Science, Innovation & STEM community.</p></div>
+<div class="milestone"><b>06</b><h4>Active Phase</h4><p>Building towards a national STEM community connecting students with knowledge, mentors, institutions and opportunities.</p></div>
+</div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="kicker">07 / Community Impact</div><h2 class="sectionHead display">NATIONAL<br><em>FOOTPRINT.</em></h2>
+<div class="stats reveal">
+<div class="stat"><b>250+</b><small>Community Members — students, young researchers, campus ambassadors & competition participants</small></div>
+<div class="stat"><b>3–4 Yrs</b><small>Grassroots STEM workshops & learning</small></div>
+<div class="stat"><b>National</b><small>Hackathons, science fairs & research circles</small></div>
+<div class="stat"><b>100%</b><small>Student-led, innovation-focused governance</small></div>
+</div>
+</div></section>
+
+<section class="paper"><div class="wrap">
+<div class="kicker">08 / Institutional Alliance</div><h2 class="sectionHead display">BUILD WITH<br><em>US.</em></h2>
+<div class="partners reveal">
+<div class="partner"><span class="kicker">Knowledge Partner</span><h3>Academic Bodies & Laboratories</h3><p>Academic bodies, laboratories and universities sharing curriculum, scientific literature and learning resources.</p><b>FOCUS: ACADEMIC CURRICULA & CONTENT</b></div>
+<div class="partner"><span class="kicker">Mentorship Partner</span><h3>Scientists & Engineers</h3><p>Senior scientists, researchers and engineers offering technical guidance and project evaluation.</p><b>FOCUS: PROJECT GUIDANCE & RESEARCH REVIEWS</b></div>
+<div class="partner"><span class="kicker">Outreach Partner</span><h3>Grassroots Networks</h3><p>Grassroots organizations, youth networks and educators taking hands-on STEM sessions to semi-urban and rural schools.</p><b>FOCUS: REGIONAL & GRASSROOTS ACCESS</b></div>
+<div class="partner"><span class="kicker">Technology Partner</span><h3>Tools & Platforms</h3><p>Hardware, software and tools providers equipping student laboratories with developmental kits and test equipment.</p><b>FOCUS: TOOLS, PLATFORMS & HARDWARE KITS</b></div>
+<div class="partner"><span class="kicker">Innovation Partner</span><h3>Incubators & Maker Spaces</h3><p>Prototyping hubs facilitating real-world student prototype testing and refinement.</p><b>FOCUS: PROTOTYPING & FABRICATION HUBS</b></div>
+<div class="partner"><span class="kicker">CSR / Corporate Partner</span><h3>STEM Initiatives & Foundations</h3><p>Corporate STEM initiatives, foundations and sponsors supporting student access, awards and event logistics.</p><b>FOCUS: SPONSORSHIP & RESOURCE GRANTS</b></div>
+<div class="partner"><span class="kicker">School Partner</span><h3>Schools & Junior Colleges</h3><p>K–12 schools, institutions and junior colleges hosting SciNova STEM workshops, clubs and science fair cohorts.</p><b>FOCUS: CAMPUS WORKSHOPS & STEM CLUBS</b></div>
+</div>
+<div style="margin-top:30px"><a class="btn" href="#contact">INITIATE A PARTNERSHIP →</a></div>
+<p class="mono" style="font-size:.65rem;color:#666;margin-top:18px">Note: SciNova India upholds strict content authenticity. Partner representations are announced only upon finalized agreements.</p>
+</div></section>
+
+<section id="dispatches" class="dark"><div class="wrap">
+<div class="kicker">09 / SciNova Dispatches & Chronicle</div><h2 class="sectionHead display">SCIENCE<br><em>IN THE WILD.</em></h2>
+<div class="dispatches reveal">
+<article class="article featured"><div class="cat">FEATURED · SCIENCE & AEROSPACE</div><h3>India's Student Space Frontier: How High Schoolers Are Building Sub-Orbital Payloads & Rover Sensors</h3><p>From tracking cosmic radiation to telemetry prototyping, student-led STEM teams across India are stepping beyond textbooks and into hands-on aerospace instrumentation.</p><div class="meta">AJ · Anangpal Jee · 5 MIN READ</div></article>
+<article class="article"><div class="cat">COMMUNITY ACTIVITIES · 6 MIN READ</div><h3>Grassroots STEM Odyssey: Igniting Scientific Inquiry in 30+ Semi-Urban & Rural Schools</h3><p>Reflections from SciNova India's state-wide workshop tour, bringing optics experiments, foldscopes, robotics kits, and stargazing telescopes to over 3,500 curious students.</p><div class="meta">#Outreach #RuralSTEM #Workshops · AR</div></article>
+<article class="article"><div class="cat">INNOVATION & GREENTECH · 4 MIN READ</div><h3>EcoFusion Project: Turning Agricultural Agro-Waste into Biodegradable Electronics Housings</h3><p>How a student team combined paddy straw composites with organic binders to replace non-recyclable petroleum plastics in educational microcontroller cases.</p><div class="meta">#Sustainability #GreenTech #CircularEconomy · UR</div></article>
+<article class="article"><div class="cat">SCIENCE & PHYSICS · 5 MIN READ</div><h3>Demystifying Quantum Computing: Why the Next Generation of Indian Physicists Must Start Today</h3><p>An accessible exploration of qubits, quantum superposition and entanglement, aligned with India's National Quantum Mission for young scholars.</p><div class="meta">#QuantumPhysics #NationalQuantumMission #STEM · AT</div></article>
+<article class="article"><div class="cat">COMMUNITY ACTIVITIES · 4 MIN READ</div><h3>SciNova National Campus Ambassador Drive 2026</h3><p>Welcoming 120+ student leaders across secondary schools and colleges to spearhead science societies, hackathons and peer research circles.</p><div class="meta">#CampusAmbassador #Leadership #YouthMakers · AC</div></article>
+</div>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="cta reveal"><h2 class="display">STAY<br>CURIOUS.</h2><p>Receive official Science & Innovation circulars about student research papers, Olympiad schedules, workshops and innovation challenges.</p><div class="actions" style="justify-content:center"><a class="btn" href="mailto:scinovaindia.co@gmail.com?subject=SciNova%20Dispatches%20Subscription">SUBSCRIBE VIA EMAIL →</a><a class="btn secondary" href="#join">JOIN WHATSAPP COMMUNITY</a></div></div>
+</div></section>
+
+<section class="engage" id="ambassador"><div class="wrap">
+<div class="kicker">10 / Student Leadership Role</div><h2 class="sectionHead display">BECOME A<br><em>CAMPUS AMBASSADOR.</em></h2>
+<div class="ambassador reveal"><div class="ambassadorGrid"><div><h3>Represent SciNova India on your campus.</h3><p>Help connect students with Science, Innovation and STEM opportunities across India.</p><a class="btn" href="https://form.jotform.com/scinovaindiaco/scinova-india-campus-ambassador-ap" target="_blank" rel="noopener">APPLY NOW ↗</a></div><div><b>YOUR RESPONSIBILITIES</b><ul><li>Promote SciNova activities, workshops and science challenges.</li><li>Connect students with learning opportunities, competitions and mentorship.</li><li>Support workshops and competitions by coordinating local participation.</li><li>Build campus engagement around STEM innovation and practical science.</li><li>Coordinate with the SciNova team on local student needs.</li><li>Encourage STEM participation and scientific curiosity among peers.</li></ul><b>AMBASSADOR BENEFITS</b><ul><li>Official leadership designation.</li><li>Recognition based on tangible contribution and outreach.</li><li>Hands-on leadership, event coordination and communication experience.</li><li>Networking with mentors, educators and young innovators.</li><li>Participation in national STEM initiatives.</li><li>Letter of Recommendation based on eligibility and demonstrated performance.</li></ul></div></div></div>
+<p class="mono" style="font-size:.67rem;margin-top:25px">OFFICIAL JOTFORM APPLICATION · OPEN TO SCHOOL & COLLEGE STUDENTS ACROSS INDIA</p>
+</div></section>
+
+<section class="dark"><div class="wrap">
+<div class="kicker">11 / Join the Movement</div><h2 class="sectionHead display">“YOUR IDEA<br>COULD BE THE<br><em>NEXT BEGINNING.”</em></h2>
+<div class="cta reveal"><h2 class="display">JOIN<br>SCINOVA.</h2><p>Join a growing community of students passionate about Science, Innovation and STEM. Connect with mentors, collaborate on prototypes and prepare for national challenges.</p><div class="actions" style="justify-content:center"><a class="btn" href="https://chat.whatsapp.com/L0IaKtPUz3NCWXaOXDMN7e" target="_blank" rel="noopener">JOIN WHATSAPP COMMUNITY →</a><a class="btn secondary" href="https://form.jotform.com/scinovaindiaco/scinova-india-campus-ambassador-ap" target="_blank" rel="noopener">BECOME A CAMPUS AMBASSADOR</a></div><p class="mono" style="font-size:.68rem;margin-top:25px">Community membership is free • Open to school & college students across India</p></div>
+</div></section>
+
+
+<section class="dark" id="publish"><div class="wrap">
+<div class="kicker">11.5 / Inbuilt Publishing</div>
+<h2 class="sectionHead display">PUBLISH<br><em>YOUR SCIENCE.</em></h2>
+<p class="inventIntro">SciNova Dispatches now supports inbuilt article publishing through the backend. The public site reads published articles from the database; authorized editors can post from the admin panel.</p>
+<div class="articleComposer reveal">
+<h3>Latest database articles</h3>
+<div id="liveArticles" class="articleList"><div class="article"><div class="cat">LOADING</div><h3>Fetching SciNova Dispatches…</h3><p>Connecting to the SciNova backend.</p></div></div>
+<div class="backendBadge"><i></i><span>DATABASE-BACKED CONTENT · ADMIN PUBLISHING ENABLED</span></div>
+</div>
+</div></section>
+
+<section id="contact" class="paper"><div class="wrap">
+<div class="kicker">12 / Get In Touch</div><h2 class="sectionHead display">LET'S BUILD<br>THE <em>FUTURE.</em></h2>
+<div class="contactGrid">
+<div class="contactCard"><h3>Founder & Chairman Contact</h3><p><b>Mr. Anangpal Jee</b><br>+91 9473038029</p><h3>Official Communication</h3><p><b>scinovaindia.co@gmail.com</b></p><p>Join the official WhatsApp Community<br>
+<a href="https://chat.whatsapp.com/L0IaKtPUz3NCWXaOXDMN7e" target="_blank" rel="noopener">WhatsApp Community ↗</a><br>
+<a href="https://www.instagram.com/scinova_india?exln=MTMxemRuY3M4dzExMw==" target="_blank" rel="noopener">Instagram ↗</a><br>
+<a href="https://www.linkedin.com/company/scinovaindia/" target="_blank" rel="noopener">LinkedIn ↗</a></p></div>
+<div class="contactCard"><h3>Send an Inquiry</h3><form onsubmit="sendMail(event)"><input class="input" id="name" required placeholder="Your Name *"><input class="input" id="email" required type="email" placeholder="Your Email *"><select class="input" id="type"><option>Student (School / College)</option><option>Teacher / Educator</option><option>Mentor / Researcher</option><option>Institution / School</option><option>Partner / Organization</option></select><textarea class="input textarea" id="message" required placeholder="Tell us how you would like to collaborate, learn, or participate with SciNova India..."></textarea><button class="btn" type="submit">SEND MESSAGE VIA EMAIL →</button></form></div>
+</div>
+<p style="margin-top:35px;color:#555;line-height:1.7">SciNova India is a student-led initiative. Not a registered NGO, company, or Section 8 entity.</p>
+</div></section>
+</main>
+
+<footer><div class="footerGrid">
+<div><div class="logo">SCINOV<span>A</span> INDIA</div><p style="font-size:.8rem;line-height:1.7">A Student-Led Science, Innovation & STEM Community.<br>Connecting students with knowledge, mentors, experts and opportunities to learn, experiment, innovate and lead.</p></div>
+<div><h4>Quick Links</h4><a href="#about">About</a><a href="#programs">Programs</a><a href="#invent">I.N.V.E.N.T. Club</a><a href="#leadership">Leadership</a><a href="#dispatches">Blog & News</a></div>
+<div><h4>Engage</h4><a href="#join">Campus Ambassador</a><a href="#join">Join SciNova</a><a href="#contact">Partnerships</a><a href="#contact">Contact</a></div>
+<div><h4>Direct Contact</h4><p style="font-size:.75rem">Email: scinovaindia.co@gmail.com</p><p style="font-size:.75rem">Founder Contact: +91 9473038029</p>
+<a href="https://www.instagram.com/scinova_india?exln=MTMxemRuY3M4dzExMw==" target="_blank" rel="noopener">Instagram ↗</a>
+<a href="https://www.linkedin.com/company/scinovaindia/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
+</div><div class="fine"><span>© 2026 SCINOVA INDIA</span><span>INNOVATE • LEARN • INSPIRE</span></div></footer>
+
+<script>
+
+// Navigation / menu
+const menuBtn = document.querySelector('#menuBtn');
+const mobileMenu = document.querySelector('#mobileMenu');
+menuBtn?.addEventListener('click', () => {
+  const open = mobileMenu.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(open));
+});
+mobileMenu?.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  mobileMenu.classList.remove('open');
+  menuBtn?.setAttribute('aria-expanded','false');
+}));
+
+// Database-backed public dispatches
+async function loadArticles(){
+  const host = document.querySelector('#liveArticles');
+  if(!host) return;
+  try{
+    const res = await fetch('/api/articles?published=true');
+    if(!res.ok) throw new Error('API unavailable');
+    const data = await res.json();
+    if(!data.length){
+      host.innerHTML = '<div class="article"><div class="cat">SCINOVA DISPATCHES</div><h3>New articles are coming soon.</h3><p>Editors can publish the next science and innovation story from the admin panel.</p></div>';
+      return;
+    }
+    host.innerHTML = data.slice(0,6).map(a => `
+      <article class="article">
+        <div class="cat">${escapeHtml(a.category || 'SCIENCE')} · ${a.read_time || 4} MIN READ</div>
+        <h3>${escapeHtml(a.title)}</h3>
+        <p>${escapeHtml(a.excerpt || a.content.slice(0,180))}</p>
+        <div class="meta">${escapeHtml(a.author || 'SciNova India')} · ${new Date(a.created_at).toLocaleDateString()}</div>
+      </article>`).join('');
+  }catch(err){
+    host.innerHTML = '<div class="article"><div class="cat">DEMO MODE</div><h3>Backend not running</h3><p>The static SciNova experience still works. Start the Node backend to enable database articles, inquiries and AI.</p></div>';
+  }
+}
+function escapeHtml(s){return String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#039;'}[c]));}
+loadArticles();
+
+// AI assistant
+const aiToggle = document.querySelector('#aiToggle');
+const aiPanel = document.querySelector('#aiPanel');
+const aiBody = document.querySelector('#aiBody');
+const aiForm = document.querySelector('#aiForm');
+aiToggle?.addEventListener('click',()=>aiPanel.classList.toggle('open'));
+function addAi(text, role='bot'){
+  const div=document.createElement('div'); div.className='aiMsg '+role; div.textContent=text; aiBody.appendChild(div); aiBody.scrollTop=aiBody.scrollHeight;
+}
+aiForm?.addEventListener('submit', async e=>{
+  e.preventDefault();
+  const input=document.querySelector('#aiInput'); const message=input.value.trim(); if(!message)return;
+  addAi(message,'user'); input.value='';
+  addAi('Thinking…','bot'); const pending=aiBody.lastChild;
+  try{
+    const res=await fetch('/api/ai/chat',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({message})});
+    const data=await res.json(); pending.textContent=data.reply || 'I could not generate a reply right now.';
+  }catch(err){ pending.textContent='AI is in demo mode. Start the backend and add an AI API key to enable live answers.'; }
+});
+
+const art=document.querySelector('#heroArt');
+art?.addEventListener('pointermove',e=>{const r=art.getBoundingClientRect(),x=(e.clientX-r.left)/r.width-.5,y=(e.clientY-r.top)/r.height-.5;art.style.transform=`rotateX(${-y*5}deg) rotateY(${x*7}deg)`});
+art?.addEventListener('pointerleave',()=>art.style.transform='');
+const observer=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('show')}),{threshold:.12});
+document.querySelectorAll('.reveal').forEach(x=>observer.observe(x));
+function sendMail(e){e.preventDefault();const n=encodeURIComponent(document.querySelector('#name').value),em=encodeURIComponent(document.querySelector('#email').value),t=encodeURIComponent(document.querySelector('#type').value),m=encodeURIComponent(document.querySelector('#message').value);location.href=`mailto:scinovaindia.co@gmail.com?subject=SciNova%20India%20Inquiry%20-%20${n}&body=Name:%20${n}%0AEmail:%20${em}%0ARole:%20${t}%0A%0AMessage:%20${m}`;}
+</script>
+
+<div class="aiDock">
+  <div class="aiPanel" id="aiPanel">
+    <div class="aiHead"><div><b>SciNova AI</b><br><small>STEM GUIDE / COMMUNITY ASSISTANT</small></div><span>✦</span></div>
+    <div class="aiBody" id="aiBody"><div class="aiMsg bot">Hi! I can explain SciNova programs, STEM topics, articles, joining options and campus ambassador information.</div></div>
+    <form class="aiForm" id="aiForm"><input id="aiInput" placeholder="Ask SciNova AI…" autocomplete="off"><button>ASK</button></form>
+  </div>
+  <button class="aiToggle" id="aiToggle" aria-label="Open SciNova AI">AI</button>
+</div>
+
+</body>
+</html>
